@@ -51,11 +51,15 @@ commandStart = async (msg) => {
     // });
     //************************************* */
 
-    await bot.sendMessage({
+    let msg = await bot.sendMessage({
         chat_id: msg.chat.id,
         text: 'لطفا شماره تماس خود را وارد کنید',
     });
-
+    
+    bot.onReplyToMessage(msg.chat.id, msg.id, (reply) => {
+        //update user name
+    })
+    
     await bot.sendMessage({
         chat_id: msg.chat.id,
         text: 'لطفا آدرس خود را وارد کنید',
